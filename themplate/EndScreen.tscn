@@ -1,0 +1,75 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://assets/font_default.tres" type="DynamicFont" id=1]
+[ext_resource path="res://assets/ChangeSceneButton.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/Quitbutton.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/background.png" type="Texture" id=4]
+[ext_resource path="res://assets/Title.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/new_theme.tres" type="Theme" id=6]
+[ext_resource path="res://themplate/EndScreen.gd" type="Script" id=7]
+
+[node name="EndScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 6 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="background" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" parent="." instance=ExtResource( 5 )]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = -235.0
+margin_top = -92.0
+margin_right = 235.0
+margin_bottom = -61.0
+text = "Congratulation! You finish the game"
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -90.5
+margin_top = -52.0
+margin_right = 90.5
+margin_bottom = -7.0
+theme = ExtResource( 6 )
+custom_fonts/font = ExtResource( 1 )
+text = "your final score is %s.
+you died times %s."
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -84.0
+margin_top = -12.0
+margin_right = 84.0
+margin_bottom = 68.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayButton" parent="VBoxContainer" instance=ExtResource( 2 )]
+text = "Play Again"
+next_scene = "res://themplate/Main menu.tscn"
+
+[node name="Quit button" parent="VBoxContainer" instance=ExtResource( 3 )]
+text = "Quit"

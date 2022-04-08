@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/font_title.tres" type="DynamicFont" id=1]
+
+[node name="Title" type="Label"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -122.0
+margin_top = 96.0
+margin_right = 123.0
+margin_bottom = 117.0
+custom_fonts/font = ExtResource( 1 )
+text = "welcom to, first godot game"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

@@ -1,0 +1,78 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/ChangeSceneButton.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/Quitbutton.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/RetryButton.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/Title.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/new_theme.tres" type="Theme" id=5]
+[ext_resource path="res://user interface/UserInterface.gd" type="Script" id=6]
+
+[node name="UserInterface" type="Control"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 5 )
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -80.0
+margin_top = 24.0
+margin_right = -21.0
+margin_bottom = 40.0
+text = "score: %s"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PauseOverlay" type="ColorRect" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.419608 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" parent="PauseOverlay" instance=ExtResource( 4 )]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = -182.5
+margin_top = -140.0
+margin_right = 182.5
+margin_bottom = -109.0
+text = "Paused"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseOverlay"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -88.0
+margin_top = -88.0
+margin_right = 88.0
+margin_bottom = 88.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RetryButton" parent="PauseOverlay/VBoxContainer" instance=ExtResource( 3 )]
+margin_right = 176.0
+margin_bottom = 56.0
+
+[node name="ChangeSceneButton" parent="PauseOverlay/VBoxContainer" instance=ExtResource( 1 )]
+margin_top = 60.0
+margin_right = 176.0
+margin_bottom = 116.0
+text = "Main Sreen"
+next_scene = "res://themplate/Main menu.tscn"
+
+[node name="Quit button" parent="PauseOverlay/VBoxContainer" instance=ExtResource( 2 )]
+margin_top = 120.0
+margin_right = 176.0
+margin_bottom = 176.0
+text = "Quit"

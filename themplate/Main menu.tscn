@@ -1,0 +1,57 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/background.png" type="Texture" id=1]
+[ext_resource path="res://assets/ChangeSceneButton.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/Quitbutton.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/new_theme.tres" type="Theme" id=4]
+[ext_resource path="res://assets/Title.tscn" type="PackedScene" id=5]
+
+[node name="Main menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="background" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -8.0
+margin_top = -8.0
+margin_right = 1192.0
+margin_bottom = 712.0
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" parent="." instance=ExtResource( 5 )]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = -182.5
+margin_top = -68.0
+margin_right = 182.5
+margin_bottom = -37.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -84.0
+margin_top = -4.0
+margin_right = 84.0
+margin_bottom = 76.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayButton" parent="VBoxContainer" instance=ExtResource( 2 )]
+text = "Play"
+next_scene = "res://themplate/level01.tscn"
+
+[node name="Quit button" parent="VBoxContainer" instance=ExtResource( 3 )]
+text = "Quit"
